@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <!--<link rel="stylesheet" href="tictac.css">-->
+    <style>
+     @import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
+        *{
+            font-family: 'Potta One', cursive;
+        }
+        html { 
+  background: url("keut\ orange.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+        .bg{
+            height:100%;
+            width:100%;
+            
+        }
+        .bg2{
+            background-image: none;
+        }
+        .container{
+            display: grid;
+            grid-template-columns: 30% 30% 30%;
+            height:70vh;
+            width:120vh;
+            margin:auto;
+            margin-top: 0%;
+            justify-content: center;
+            column-gap: .5vh;
+            row-gap: .5vh;
+            background-image: none;
+        }   
+        .item{
+            border: 5px solid black;
+            font-size:50px;
+            text-align: center;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100%;
+            width:100%;
+            background-image: none;
+        }
+        .container1{
+            border-top:0;
+            border-left:0;
+        }
+        .container2{
+            border-top:0;
+        }
+        .container3{
+            border-top:0;
+            border-right:0;
+        }
+        .container4{
+            border-left:0;
+        }
+        .container6{
+            border-right:0;
+        } 
+        .container7{
+            border-left:0;
+            border-bottom:0;
+        }
+        .container8{
+            border-bottom:0;
+        }
+        .container9{
+            border-bottom:0;
+            border-right:0;
+        }
+        .head1{
+            font-size: 40px;
+            margin-left: 10%;
+            background-image: none;
+        }
+        .head2{
+            margin-left: 10%;
+            font-size: 40px;
+            background-image: none;
+        }
+        .inside1{
+            font-size: 40px;
+            color: red;
+            background-image: none;
+        }
+        .inside2{
+            margin-top: 3.5%;
+            font-size: 50px;
+            color: black;
+            background-image: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg">
+    <div class="bg2" style="margin-top: 1%;">
+        <div class="head1">Player1 <span class="inside1">X</span></div>
+        <div class="head2">Player2 <span class="inside2">O</span></div>
+    </div>
+    <div class="container">
+        <div class="item container1" id="now1" onclick="myfunc('now1')"></div>
+        <div class="item container2" id="now2" onclick="myfunc('now2')"></div>
+        <div class="item container3" id="now3" onclick="myfunc('now3')"></div>
+        <div class="item container4" id="now4" onclick="myfunc('now4')"></div>
+        <div class="item container5" id="now5" onclick="myfunc('now5')"></div>
+        <div class="item container6" id="now6" onclick="myfunc('now6')"></div>
+        <div class="item container7" id="now7" onclick="myfunc('now7')"></div>
+        <div class="item container8" id="now8" onclick="myfunc('now8')"></div>
+        <div class="item container9" id="now9" onclick="myfunc('now9')"></div>
+    </div>
+    </div>
+    <script type="application/javascript">
+        var i=0;
+        function myfunc(s)
+        {
+            let m;
+            let a=document.getElementById(s);
+            if(i%2==0)
+            { 
+                a.innerText='X';
+                m='X';
+                a.style.color = 'red';
+            }
+            else {
+                a.innerText='O';
+                m='O';
+                a.style.color = 'black';
+            }
+            i++;
+            a.onclick= null;
+            check(m)
+        }
+        function check(m)
+        {
+            a1=document.getElementById("now1").innerText;
+            a2=document.getElementById("now2").innerText;
+            a3=document.getElementById("now3").innerText;
+            a4=document.getElementById("now4").innerText;
+            a5=document.getElementById("now5").innerText;
+            a6=document.getElementById("now6").innerText;
+            a7=document.getElementById("now7").innerText;
+            a8=document.getElementById("now8").innerText;
+            a9=document.getElementById("now9").innerText;
+            if(a1==a2 && a2==a3 && a3==a1 && a1==m)
+            {
+                alert("abc!!");
+            }
+            else if(a4==a5 && a5==a6 && a6==a4 && a4==m)
+            {
+                alert("abc!!");
+            }
+            else if(a7==a8 && a8==a9 && a9==a7 && a7==m)
+            {
+                alert("abc!!");
+            }
+            else if(a1==a4 && a4==a7 && a7==a1 && a1==m)
+            {
+                alert("abc!!");
+            }
+            else if(a2==a5 && a5==a8 && a8==a2 && a2==m)
+            {
+                alert("abc!!");
+            }
+            else if(a3==a6 && a6==a9 && a9==a3 && a3==m)
+            {
+                alert("abc!!");
+            }
+            else if(a1==a5 && a5==a9 && a9==a1 && a1==m)
+            {
+                alert("abc!!");
+            }
+            else if(a3==a5 && a5==a7 && a7==a3 && a3==m)
+            {
+                alert("abc!!");
+            }
+            else{
+                if(i==9) alert("DRAW!!");
+            }
+        }
+    </script>
+</body>
+</html>
